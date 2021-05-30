@@ -2,6 +2,7 @@ This package will help you to train and predict using CNN model
 
 To use this package you'll need to create an object of base class
 for example:
+    
     obj = TrainCNNWithResnet(trainDatasetPath = None, validationDatasetPath = None, datasetFormat = "folder", 
                                 imageSize = [224,224], useDatagenerator = True, loadModel = False)
                                 
@@ -14,6 +15,7 @@ for example:
     loadModel             : True if you want to load previously trained model but it should be available at {modelName}\final-model.hdf5
 
 Train the model :
+    
     obj.train(epochs = 50, filepath = "Default"  )
 
     @params
@@ -21,6 +23,7 @@ Train the model :
     filepath : to set new path for saving model weight file
 
 Predict from model
+    
     obj.predict(features, normalize = True)
 
     @params

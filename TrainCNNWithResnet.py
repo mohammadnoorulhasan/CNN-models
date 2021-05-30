@@ -4,7 +4,7 @@ import os
 from keras.applications.resnet50 import ResNet50
 from keras.layers import Input, Dense, Flatten
 from keras.models import Model
-from CNNModel.TrainModel import TrainModel
+from CNNModels.TrainModel import TrainModel
 import numpy as np
 from keras.preprocessing import image
 
@@ -26,7 +26,6 @@ class TrainCNNWithResnet(TrainModel):
         
     
     def getModel(self):
-        print(self.imageSize + [3])
         resnet = ResNet50(input_shape=self.imageSize + [3], weights='imagenet', include_top=False)
         # don't train existing weights
         for layer in resnet.layers:

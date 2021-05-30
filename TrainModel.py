@@ -13,7 +13,6 @@ from os.path import normpath
 import json
 
 class TrainModel:
-
     def __init__(self, trainDatasetPath = None, validationDatasetPath = None, datasetFormat = "folder",
                         imageSize = (224,224), useDatagenerator = True, modelName = "model"):
         
@@ -81,8 +80,7 @@ class TrainModel:
         pass
 
 
-    def train(self,  useDatagenerator = True, epochs = 50, 
-                        filepath = "Default" ):
+    def train(self,  epochs = 50, filepath = "Default" ):
         if filepath == "Default":
             filepath = self.modelName+"/training/weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5"
         checkpoint = ModelCheckpoint(filepath, monitor='val_accuracy', 
